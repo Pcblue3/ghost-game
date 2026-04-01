@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ckfxu47dxqpw7"]
+
+[ext_resource type="Script" uid="uid://b0mxljce5rjvd" path="res://Scenes/ghost_player.gd" id="1_dx07s"]
+[ext_resource type="PackedScene" uid="uid://ci5eycqigjsum" path="res://Scenes/dialog_player.tscn" id="2_5htb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx07s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bocbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_id4b7"]
+size = Vector2(2, 2.272931)
+
+[node name="Player" type="CharacterBody2D" unique_id=276981743 groups=["Player"]]
+scale = Vector2(7.976881, 9.750825)
+script = ExtResource("1_dx07s")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=1510257487 groups=["Player"]]
+position = Vector2(0, -0.5360288)
+scale = Vector2(1.9833477, 2.084951)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractRange" unique_id=695041806]
+position = Vector2(-0.018890077, 0.13646553)
+scale = Vector2(0.254802, 0.20820616)
+shape = SubResource("RectangleShape2D_dx07s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736403744]
+position = Vector2(1.4210855e-14, 0)
+scale = Vector2(6.990039, 7.836779)
+texture = SubResource("CanvasTexture_bocbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745236308]
+position = Vector2(0, -0.5360288)
+scale = Vector2(3.8958676, 3.9279423)
+shape = SubResource("RectangleShape2D_id4b7")
+
+[node name="DialogPlayer" parent="." unique_id=46922638 instance=ExtResource("2_5htb6")]
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="InteractRange" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractRange" to="." method="_on_area_2d_body_exited"]
+
+[editable path="DialogPlayer"]

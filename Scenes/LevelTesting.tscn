@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwvqiyst5mmmx"]
+
+[ext_resource type="PackedScene" uid="uid://ckfxu47dxqpw7" path="res://Scenes/GhostPlayer.tscn" id="1_13j6e"]
+[ext_resource type="PackedScene" uid="uid://bj4pbtgotgpuy" path="res://Scenes/Ground.tscn" id="2_d3sdd"]
+[ext_resource type="PackedScene" uid="uid://dbvxehb6f5ra8" path="res://Scenes/Ball.tscn" id="3_d3sdd"]
+
+[node name="Node2D" type="Node2D" unique_id=1785865368]
+position = Vector2(-24, 1)
+scale = Vector2(1.0015242, 1.1076193)
+
+[node name="StaticBody2D" parent="." unique_id=1527165230 instance=ExtResource("2_d3sdd")]
+position = Vector2(-265.59515, 185.9845)
+scale = Vector2(0.75782025, 1.1793593)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1724101143]
+
+[node name="Player" parent="." unique_id=276981743 instance=ExtResource("1_13j6e")]
+position = Vector2(-193.70476, 48.753216)
+
+[node name="Ball" parent="." unique_id=2016215489 instance=ExtResource("3_d3sdd")]
+position = Vector2(182.72148, 132.71709)
+
+[node name="Ball2" parent="." unique_id=1632834404 instance=ExtResource("3_d3sdd")]
+position = Vector2(421.36386, 123.591545)

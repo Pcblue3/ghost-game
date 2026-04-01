@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ci5eycqigjsum"]
+
+[ext_resource type="Texture2D" uid="uid://dkx8ge71usk7x" path="res://Assets/PlaceHolderBox.png" id="1_8idmd"]
+[ext_resource type="Script" uid="uid://lyb466du3ida" path="res://Scenes/dialog_player.gd" id="1_wc4ro"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wc4ro"]
+line_spacing = 5.0
+paragraph_spacing = 2.0
+font_size = 40
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+
+[node name="DialogPlayer" type="CanvasLayer" unique_id=46922638]
+script = ExtResource("1_wc4ro")
+
+[node name="Background" type="TextureRect" parent="." unique_id=657671768]
+offset_left = 243.0
+offset_top = 94.00001
+offset_right = 768.2655
+offset_bottom = 298.48434
+scale = Vector2(1.3231403, 3.1200428)
+texture = ExtResource("1_8idmd")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=49097194]
+offset_left = 380.0
+offset_top = 413.0
+offset_right = 797.0
+offset_bottom = 543.0
+label_settings = SubResource("LabelSettings_wc4ro")
+horizontal_alignment = 1
+autowrap_mode = 3

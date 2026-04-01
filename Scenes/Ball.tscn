@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dbvxehb6f5ra8"]
+
+[ext_resource type="Texture2D" uid="uid://dylkq1x4bbwfy" path="res://Assets/Ball.png" id="1_7nh6h"]
+[ext_resource type="Script" uid="uid://bfapend6vjoaf" path="res://Scenes/ball.gd" id="1_eb1ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb1ap"]
+size = Vector2(20, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27lt3"]
+atlas = ExtResource("1_7nh6h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dh43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27lt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ball" type="Area2D" unique_id=2016215489 groups=["Interactable"]]
+position = Vector2(4, -0.99999994)
+scale = Vector2(0.99613804, 1.017862)
+script = ExtResource("1_eb1ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342524844]
+position = Vector2(0, -2)
+scale = Vector2(1.7838972, 1)
+shape = SubResource("RectangleShape2D_eb1ap")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=115966814]
+scale = Vector2(1.0018517, 1)
+sprite_frames = SubResource("SpriteFrames_3dh43")
+frame_progress = 0.48552108
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
