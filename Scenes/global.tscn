@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ccv1ojk50udic"]
+
+[ext_resource type="Script" uid="uid://bsamu41br1ooo" path="res://SignalBus/Global.gd" id="1_koean"]
+
+[node name="Global" type="Node2D" unique_id=2126192178]
+script = ExtResource("1_koean")

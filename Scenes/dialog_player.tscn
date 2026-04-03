@@ -1,33 +1,69 @@
 [gd_scene format=3 uid="uid://ci5eycqigjsum"]
 
-[ext_resource type="Texture2D" uid="uid://dkx8ge71usk7x" path="res://Assets/PlaceHolderBox.png" id="1_8idmd"]
 [ext_resource type="Script" uid="uid://lyb466du3ida" path="res://Scenes/dialog_player.gd" id="1_wc4ro"]
+[ext_resource type="Texture2D" uid="uid://cwn5mr0spyeu0" path="res://Assets/TextBox.png" id="2_g2ola"]
+[ext_resource type="FontFile" uid="uid://dd42md78snj38" path="res://Assets/Font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_fwmsl"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wc4ro"]
-line_spacing = 5.0
-paragraph_spacing = 2.0
-font_size = 40
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
+[sub_resource type="LabelSettings" id="LabelSettings_k63o7"]
+line_spacing = 0.0
+font = ExtResource("3_fwmsl")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g2ola"]
+line_spacing = 0.0
+font = ExtResource("3_fwmsl")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 0
 
 [node name="DialogPlayer" type="CanvasLayer" unique_id=46922638]
 script = ExtResource("1_wc4ro")
 
 [node name="Background" type="TextureRect" parent="." unique_id=657671768]
-offset_left = 243.0
-offset_top = 94.00001
-offset_right = 768.2655
-offset_bottom = 298.48434
-scale = Vector2(1.3231403, 3.1200428)
-texture = ExtResource("1_8idmd")
+offset_left = 274.0
+offset_top = 137.0
+offset_right = 843.7523
+offset_bottom = 373.58548
+scale = Vector2(1.0917026, 2.6206174)
+texture = ExtResource("2_g2ola")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="." unique_id=49097194]
-offset_left = 380.0
-offset_top = 413.0
-offset_right = 797.0
-offset_bottom = 543.0
-label_settings = SubResource("LabelSettings_wc4ro")
+offset_left = 394.0
+offset_top = 371.99997
+offset_right = 724.1443
+offset_bottom = 476.5245
+scale = Vector2(1.1510118, 1.186324)
+text = "testing
+wow"
+label_settings = SubResource("LabelSettings_k63o7")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="QBackground" type="TextureRect" parent="." unique_id=1302931152]
+offset_left = 348.0
+offset_top = -107.0
+offset_right = 917.7523
+offset_bottom = 129.58548
+scale = Vector2(0.8298895, 2.2064636)
+texture = ExtResource("2_g2ola")
+expand_mode = 2
+
+[node name="QLabel" type="Label" parent="." unique_id=789462068]
+offset_left = 459.0
+offset_top = 123.99997
+offset_right = 789.1443
+offset_bottom = 240.99997
+scale = Vector2(0.75557333, 0.8226406)
+text = "Press Y for yes
+
+Press O for No"
+label_settings = SubResource("LabelSettings_g2ola")
 horizontal_alignment = 1
 autowrap_mode = 3

@@ -23,7 +23,7 @@ animations = [{
 
 [node name="Ball" type="Area2D" unique_id=2016215489 groups=["Interactable"]]
 position = Vector2(4, -0.99999994)
-scale = Vector2(0.99613804, 1.017862)
+scale = Vector2(0.21710077, 0.20364374)
 script = ExtResource("1_eb1ap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342524844]

@@ -1,6 +1,6 @@
 extends Area2D
-var DialogPlayerLabel
-var DialogPlayer
+var asking = false
+var QDisplay
 
 func Interact() -> String:
 	print("Interacted")

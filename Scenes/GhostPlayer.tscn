@@ -2,16 +2,61 @@
 
 [ext_resource type="Script" uid="uid://b0mxljce5rjvd" path="res://Scenes/ghost_player.gd" id="1_dx07s"]
 [ext_resource type="PackedScene" uid="uid://ci5eycqigjsum" path="res://Scenes/dialog_player.tscn" id="2_5htb6"]
+[ext_resource type="Texture2D" uid="uid://c35jh5u7uy5ry" path="res://Assets/GhostyBoi.png" id="2_w885m"]
+[ext_resource type="Texture2D" uid="uid://b0m8kmcv7ccrn" path="res://Assets/Alert.png" id="4_cgv2d"]
+[ext_resource type="Texture2D" uid="uid://bmleme5y0lk50" path="res://Assets/ObjAlert.png" id="5_ilguw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx07s"]
+size = Vector2(16.338531, 18.980219)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_bocbb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgv2d"]
+atlas = ExtResource("2_w885m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilguw"]
+atlas = ExtResource("2_w885m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ssyg"]
+atlas = ExtResource("2_w885m")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvtf2"]
+atlas = ExtResource("2_w885m")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5pyg"]
+atlas = ExtResource("2_w885m")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogxek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgv2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilguw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ssyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvtf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5pyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_id4b7"]
-size = Vector2(2, 2.272931)
+size = Vector2(1.745439, 2.0035372)
 
 [node name="Player" type="CharacterBody2D" unique_id=276981743 groups=["Player"]]
-scale = Vector2(7.976881, 9.750825)
+scale = Vector2(10, 11.416)
 script = ExtResource("1_dx07s")
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=1510257487 groups=["Player"]]
@@ -19,25 +64,35 @@ position = Vector2(0, -0.5360288)
 scale = Vector2(1.9833477, 2.084951)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractRange" unique_id=695041806]
-position = Vector2(-0.018890077, 0.13646553)
-scale = Vector2(0.254802, 0.20820616)
+position = Vector2(-0.02521009, 0.2781009)
+scale = Vector2(0.20675828, 0.20143287)
 shape = SubResource("RectangleShape2D_dx07s")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736403744]
-position = Vector2(1.4210855e-14, 0)
-scale = Vector2(6.990039, 7.836779)
-texture = SubResource("CanvasTexture_bocbb")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1456109117]
+position = Vector2(-0.19003898, 0.16733551)
+scale = Vector2(0.48625487, 0.482762)
+sprite_frames = SubResource("SpriteFrames_ogxek")
+autoplay = "default"
+frame_progress = 0.81027263
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745236308]
-position = Vector2(0, -0.5360288)
+position = Vector2(-0.19999985, -0.006946761)
 scale = Vector2(3.8958676, 3.9279423)
 shape = SubResource("RectangleShape2D_id4b7")
 
 [node name="DialogPlayer" parent="." unique_id=46922638 instance=ExtResource("2_5htb6")]
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=292935247]
+position = Vector2(-0.1, -4.905396)
+scale = Vector2(0.19999999, 0.23721093)
+texture = ExtResource("4_cgv2d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1840619449]
+position = Vector2(-0.1, -4.905396)
+scale = Vector2(0.19999999, 0.23721093)
+texture = ExtResource("5_ilguw")
+
 [connection signal="area_entered" from="InteractRange" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="InteractRange" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="InteractRange" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="InteractRange" to="." method="_on_area_2d_body_exited"]
-
-[editable path="DialogPlayer"]

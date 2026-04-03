@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://culrcq66rkpy3"]
+
+[ext_resource type="Script" uid="uid://bfapend6vjoaf" path="res://Scenes/ball.gd" id="1_42nxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb1ap"]
+size = Vector2(20, 42)
+
+[node name="Box" type="Area2D" unique_id=2016215489 groups=["Interactable"]]
+position = Vector2(4, -0.99999994)
+script = ExtResource("1_42nxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342524844]
+position = Vector2(0, -2)
+scale = Vector2(1.7838972, 1)
+shape = SubResource("RectangleShape2D_eb1ap")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
