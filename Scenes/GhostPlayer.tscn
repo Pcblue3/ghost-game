@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b0mxljce5rjvd" path="res://Scenes/ghost_player.gd" id="1_dx07s"]
 [ext_resource type="PackedScene" uid="uid://ci5eycqigjsum" path="res://Scenes/dialog_player.tscn" id="2_5htb6"]
+[ext_resource type="PackedScene" uid="uid://bxrk4wixo6o1r" path="res://Scenes/fade.tscn" id="2_6ssyg"]
 [ext_resource type="Texture2D" uid="uid://c35jh5u7uy5ry" path="res://Assets/GhostyBoi.png" id="2_w885m"]
+[ext_resource type="PackedScene" uid="uid://ccv1ojk50udic" path="res://Scenes/global.tscn" id="2_xvtf2"]
 [ext_resource type="Texture2D" uid="uid://b0m8kmcv7ccrn" path="res://Assets/Alert.png" id="4_cgv2d"]
 [ext_resource type="Texture2D" uid="uid://bmleme5y0lk50" path="res://Assets/ObjAlert.png" id="5_ilguw"]
 
@@ -58,6 +60,10 @@ size = Vector2(1.745439, 2.0035372)
 [node name="Player" type="CharacterBody2D" unique_id=276981743 groups=["Player"]]
 scale = Vector2(10, 11.416)
 script = ExtResource("1_dx07s")
+
+[node name="Global" parent="." unique_id=2126192178 instance=ExtResource("2_xvtf2")]
+
+[node name="Fade" parent="." unique_id=1207260888 instance=ExtResource("2_6ssyg")]
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=1510257487 groups=["Player"]]
 position = Vector2(0, -0.5360288)

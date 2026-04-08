@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c1c0rjwkgr034" path="res://Scenes/Winter.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dse3mripkg58l" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bxrk4wixo6o1r" path="res://Scenes/fade.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ckfxu47dxqpw7" path="res://Scenes/GhostPlayer.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://culrcq66rkpy3" path="res://Scenes/Box.tscn" id="4_lquwl"]
 
 [node name="main" type="Node2D" unique_id=1676848567]
 script = ExtResource("1_h2yge")
@@ -10,4 +11,10 @@ script = ExtResource("1_h2yge")
 [node name="Winter" parent="." unique_id=1785865368 instance=ExtResource("1_0xm2m")]
 position = Vector2(-87, -10)
 
-[node name="Fade" parent="." unique_id=1207260888 instance=ExtResource("2_h2yge")]
+[node name="Player" parent="." unique_id=276981743 instance=ExtResource("4_1bvp3")]
+top_level = true
+position = Vector2(-458, 0)
+
+[node name="MoveToSpring" parent="." unique_id=2016215489 instance=ExtResource("4_lquwl")]
+position = Vector2(-440.00006, -153.00003)
+scale = Vector2(15.501967, 17.08162)

@@ -5,4 +5,3 @@ var QDisplay
 func Interact() -> String:
 	print("Interacted")
 	return name
-	
