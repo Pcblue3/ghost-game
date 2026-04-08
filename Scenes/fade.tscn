@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bxrk4wixo6o1r"]
+
+[ext_resource type="Script" uid="uid://cscp1lwpdl3ky" path="res://Scenes/fade.gd" id="1_rdiqc"]
+
+[node name="Fade" type="CanvasLayer" unique_id=1207260888]
+script = ExtResource("1_rdiqc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1608532975]
+offset_left = -1251.0
+offset_top = -674.0
+offset_right = 1710.0
+offset_bottom = 590.0
+color = Color(0, 0, 0, 1)

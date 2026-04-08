@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var fade: CanvasLayer = $"../../Fade"
 
 
 const SPEED = 300.0
@@ -16,6 +17,11 @@ var QText
 var Global
 var AlertSprite
 var ObjSprite
+var current_level : Node2D = null
+var WinterLevel = preload("res://Scenes/Winter.tscn")
+var WinterIndoorRoom1 = preload("res://Scenes/LevelTesting.tscn")
+@onready var main: Node2D = $"../.."
+
 func _ready() -> void:
 	Text = $DialogPlayer/Label
 	QPlayer = $DialogPlayer/QBackground
@@ -27,6 +33,8 @@ func _ready() -> void:
 	ObjSprite = $Sprite2D3
 	ObjSprite.visible = false
 	AlertSprite.visible = false
+	current_level = $".."
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -165,6 +173,30 @@ func Dialog(DiaObj: String) -> void:
 			DialogCounter = 0
 			DialogObject = null
 			inDialog = false
+
+	elif (DiaObj == "WinterOutdoor1"):
+		Text.text = "..."
+		if DialogCounter == 1:
+			Text.text = "Enter?"
+		if DialogCounter == 2:
+			isAsking = true
+			if Answer == 1:
+				Text.text = "Wow"
+				Answer = 0
+				isAsking = false
+				DialogObject = null
+				inDialog = false
+				Answer = 0
+				await fade.fade(1.0, 1).finished
+				main.exit(WinterIndoorRoom1)
+			if Answer == 2:
+				Text.text = "..."
+				isAsking = false
+				Answer = 0
+		elif DialogCounter == 3:
+			DialogObject = null
+			inDialog = false
+			Answer = 0
 
 	else:
 		DialogCounter = 0

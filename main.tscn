@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://0wy8er34mrcl"]
+
+[ext_resource type="PackedScene" uid="uid://c1c0rjwkgr034" path="res://Scenes/Winter.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dse3mripkg58l" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bxrk4wixo6o1r" path="res://Scenes/fade.tscn" id="2_h2yge"]
+
+[node name="main" type="Node2D" unique_id=1676848567]
+script = ExtResource("1_h2yge")
+
+[node name="Winter" parent="." unique_id=1785865368 instance=ExtResource("1_0xm2m")]
+position = Vector2(-87, -10)
+
+[node name="Fade" parent="." unique_id=1207260888 instance=ExtResource("2_h2yge")]
